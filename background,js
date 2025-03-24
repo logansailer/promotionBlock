@@ -39,7 +39,7 @@ chrome.webNavigation.onCommitted.addListener(function (tab) {
 function runBlockingScript() {
   //inject script from file into the site
   chrome.tabs.executeScript({
-    file: "blocker.js",
+    file: "extension.js",
   });
   return true;
 }
