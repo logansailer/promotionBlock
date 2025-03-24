@@ -5,7 +5,7 @@ function removeAds() {
     //see if they are "Promoted"
     if (spans[i].innerHTML === "Promoted") {
       //get the div of the ad
-      let card = spans[i].closest(".feed-shared-update-v2");
+      let card = spans[i].closest(".fie-impression-container");
 
       if (card === null) {
         let j = 0;
