@@ -1,20 +1,20 @@
 function removeAds() {
   //Get the span elements of the page
-  let spans = document.getElementByTagName("span");
-  for (let i = 0; i < spans.length; i++) {
+  let span = document.querySelectorAll("span");
+  for (let i = 0; i < span.length; i++) {
     //see if they are "Promoted"
-    if (spans[i].innerHTML === "Promoted") {
+    if (span[i].innerText === "Promoted") {
       //get the div of the ad
-      let card = spans[i].closest(
-        "feed-shared-update-v2__control-menu-container"
+      let card = span[i].closest(
+        "ember-view"
       );
 
       if (card === null) {
         let j = 0;
-        card = spans[i];
-        while (j < 6) {
+        card = span[i];
+        while (j < 10) {
           card = card.parentNode;
-          ++j;
+          j++;
         }
       }
 
@@ -23,10 +23,10 @@ function removeAds() {
     }
   }
 }
-
 removeAds();
 
-//continues to happen, not just on first load
+//continues to block, not just on first load
 setInterval(function () {
-	removeAds();
-}), 100
+  removeAds();
+}),
+  100000;

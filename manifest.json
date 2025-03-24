@@ -1,14 +1,14 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "LinkedIn AdBlocker",
-  "description": "Blocking ads.",
-  "version": "0.0.1",
-  "author": "<AUTHOR_NAME>",
-  "browser_action": {
-    "default_title": "LinkedIn AdBlocker"
-  },
-  "permissions": ["tabs", "webNavigation", "https://www.linkedin.com/"],
-  "background": {
-    "scripts": ["extension.js"]
-  }
+  "description": "Blocks promotioned posts on LinkedIn.",
+  "version": "1.0",
+  "author": "<Logan Sailer>",
+  "permissions": ["tabs", "webNavigation"],
+  "content_scripts": [
+    {
+      "js": ["linkedin.js"],
+      "matches": ["https://www.linkedin.com/*", "https://linkedin.com/*"]
+    }
+  ]
 }
